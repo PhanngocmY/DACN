@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# generated at runtime
+logs/
+*.jsonl
+evidence/**/raw/
+
+# secrets and machine-specific config
+.env
+config.local.*
+
+# local Keycloak/Docker data
+keycloak-data/
