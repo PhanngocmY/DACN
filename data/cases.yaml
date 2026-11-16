@@ -1,0 +1,122 @@
+ghi_chu: Bảng ca dùng chung cho cả ba bộ thực thi (NFR-02).
+cases:
+- id: CT01
+  subject: gv_cntt_01
+  action: edit
+  resource:
+    type: syllabus
+    id: DC-CNTT-001
+  expected: allow
+  yeu_cau: FR-01
+- id: CT02
+  subject: gv_cntt_01
+  action: view
+  resource:
+    type: syllabus
+    id: DC-CNTT-001
+  expected: allow
+  yeu_cau: FR-01
+- id: CT03
+  subject: gv_cntt_01
+  action: edit
+  resource:
+    type: syllabus
+    id: DC-TOAN-001
+  expected: deny
+  yeu_cau: FR-02
+- id: CT04
+  subject: gv_toan_01
+  action: edit
+  resource:
+    type: syllabus
+    id: DC-CNTT-001
+  expected: deny
+  yeu_cau: FR-02
+- id: CT05
+  subject: sv_01
+  action: edit
+  resource:
+    type: syllabus
+    id: DC-CNTT-001
+  expected: deny
+  yeu_cau: FR-02
+- id: CT06
+  subject: gv_kiem_2khoa
+  action: edit
+  resource:
+    type: syllabus
+    id: DC-TOAN-001
+  expected: deny
+  yeu_cau: 'FR-02 (biên: chỉ khoa chính được sửa — GV xác nhận lại quy tắc)'
+- id: LM01
+  subject: sv_01
+  action: view
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: allow
+  yeu_cau: FR-03
+- id: LM02
+  subject: sv_02
+  action: view
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: deny
+  yeu_cau: FR-04
+- id: LM03
+  subject: sv_huy
+  action: view
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: deny
+  yeu_cau: 'FR-04 (biên: đã hủy ghi danh)'
+- id: LM04
+  subject: sv_01
+  action: edit
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: deny
+  yeu_cau: FR-04 (sinh viên không sửa nội dung)
+- id: LM05
+  subject: gv_cntt_01
+  action: view
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: allow
+  yeu_cau: FR-05
+- id: LM06
+  subject: gv_cntt_01
+  action: edit
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: allow
+  yeu_cau: FR-05
+- id: LM07
+  subject: gv_cntt_01
+  action: view
+  resource:
+    type: course
+    id: LMS-GT01
+  expected: deny
+  yeu_cau: FR-05
+- id: LM08
+  subject: gv_toan_01
+  action: edit
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: deny
+  yeu_cau: FR-05
+- id: LM09
+  subject: khach_la
+  action: view
+  resource:
+    type: course
+    id: LMS-ATTT01
+  expected: deny
+  yeu_cau: 'Biên: chủ thể không tồn tại → mặc định từ chối'

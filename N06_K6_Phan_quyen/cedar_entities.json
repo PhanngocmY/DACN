@@ -1,0 +1,138 @@
+[
+  {
+    "uid": {
+      "type": "User",
+      "id": "gv_cntt_01"
+    },
+    "attrs": {
+      "role": "giang_vien",
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "gv_toan_01"
+    },
+    "attrs": {
+      "role": "giang_vien",
+      "khoa": "TOAN"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "gv_kiem_2khoa"
+    },
+    "attrs": {
+      "role": "giang_vien",
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "sv_01"
+    },
+    "attrs": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "sv_02"
+    },
+    "attrs": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "sv_huy"
+    },
+    "attrs": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Syllabus",
+      "id": "DC-CNTT-001"
+    },
+    "attrs": {
+      "khoa": "CNTT"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Syllabus",
+      "id": "DC-TOAN-001"
+    },
+    "attrs": {
+      "khoa": "TOAN"
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Course",
+      "id": "LMS-ATTT01"
+    },
+    "attrs": {
+      "instructors": [
+        {
+          "__entity": {
+            "type": "User",
+            "id": "gv_cntt_01"
+          }
+        }
+      ],
+      "enrolled": [
+        {
+          "__entity": {
+            "type": "User",
+            "id": "sv_01"
+          }
+        }
+      ]
+    },
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Course",
+      "id": "LMS-GT01"
+    },
+    "attrs": {
+      "instructors": [
+        {
+          "__entity": {
+            "type": "User",
+            "id": "gv_toan_01"
+          }
+        }
+      ],
+      "enrolled": [
+        {
+          "__entity": {
+            "type": "User",
+            "id": "sv_02"
+          }
+        }
+      ]
+    },
+    "parents": []
+  }
+]

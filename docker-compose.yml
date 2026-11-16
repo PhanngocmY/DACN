@@ -1,0 +1,48 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.0
+    command: start-dev --import-realm
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HTTP_RELATIVE_PATH: /
+    volumes:
+      - ./policies/keycloak:/opt/keycloak/data/import:ro
+      - keycloak-data:/opt/keycloak/data
+    ports:
+      - "8080:8080"
+
+  opa:
+    image: openpolicyagent/opa:1.0.0
+    command:
+      - "run"
+      - "--server"
+      - "--addr=:8181"
+      - "/data/data.json"
+      - "/policies/policy.rego"
+    volumes:
+      - ./data/data.json:/data/data.json:ro
+      - ./policies/opa/policy.rego:/policies/policy.rego:ro
+    ports:
+      - "8181:8181"
+
+  api:
+    build: .
+    user: "${UID}:${GID}"
+    environment:
+      OPA_URL: "http://opa:8181/v1/data/authz/allow"
+      KEYCLOAK_URL: "http://keycloak:8080"
+      DATA_JSON_PATH: "/app/data/data.json"
+      CEDAR_POLICIES_PATH: "/app/policies/cedar/policies.cedar"
+      CEDAR_ENTITIES_PATH: "/app/data/cedar_entities.json"
+    volumes:
+      - ./data:/app/data:ro
+      - ./policies:/app/policies:ro
+      - ./evidence:/app/evidence
+    ports:
+      - "8000:8000"
+    depends_on:
+      - opa
+      - keycloak
+volumes:
+  keycloak-data:

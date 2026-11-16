@@ -1,0 +1,70 @@
+{
+  "users": {
+    "gv_cntt_01": {
+      "role": "giang_vien",
+      "khoa": "CNTT",
+      "courses_teach": [
+        "LMS-ATTT01"
+      ]
+    },
+    "gv_toan_01": {
+      "role": "giang_vien",
+      "khoa": "TOAN",
+      "courses_teach": [
+        "LMS-GT01"
+      ]
+    },
+    "gv_kiem_2khoa": {
+      "role": "giang_vien",
+      "khoa": "CNTT",
+      "khoa_phu": [
+        "TOAN"
+      ],
+      "courses_teach": []
+    },
+    "sv_01": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    },
+    "sv_02": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    },
+    "sv_huy": {
+      "role": "sinh_vien",
+      "khoa": "CNTT"
+    }
+  },
+  "syllabi": {
+    "DC-CNTT-001": {
+      "khoa": "CNTT",
+      "ten": "Đề cương An toàn thông tin"
+    },
+    "DC-TOAN-001": {
+      "khoa": "TOAN",
+      "ten": "Đề cương Giải tích"
+    }
+  },
+  "courses": {
+    "LMS-ATTT01": {
+      "instructors": [
+        "gv_cntt_01"
+      ],
+      "enrolled": [
+        "sv_01"
+      ],
+      "unenrolled": [
+        "sv_huy"
+      ]
+    },
+    "LMS-GT01": {
+      "instructors": [
+        "gv_toan_01"
+      ],
+      "enrolled": [
+        "sv_02"
+      ],
+      "unenrolled": []
+    }
+  }
+}

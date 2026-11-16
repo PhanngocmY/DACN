@@ -1,0 +1,166 @@
+{
+  "realm": "k6-lab",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "giang_vien"
+      },
+      {
+        "name": "sinh_vien"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "gv_cntt_01",
+      "enabled": true,
+      "firstName": "gv_cntt_01",
+      "lastName": "Lab",
+      "email": "gv_cntt_01@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "CNTT"
+        ]
+      },
+      "realmRoles": [
+        "giang_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "gv_toan_01",
+      "enabled": true,
+      "firstName": "gv_toan_01",
+      "lastName": "Lab",
+      "email": "gv_toan_01@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "TOAN"
+        ]
+      },
+      "realmRoles": [
+        "giang_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "gv_kiem_2khoa",
+      "enabled": true,
+      "firstName": "gv_kiem_2khoa",
+      "lastName": "Lab",
+      "email": "gv_kiem_2khoa@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "CNTT"
+        ]
+      },
+      "realmRoles": [
+        "giang_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "sv_01",
+      "enabled": true,
+      "firstName": "sv_01",
+      "lastName": "Lab",
+      "email": "sv_01@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "CNTT"
+        ]
+      },
+      "realmRoles": [
+        "sinh_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "sv_02",
+      "enabled": true,
+      "firstName": "sv_02",
+      "lastName": "Lab",
+      "email": "sv_02@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "CNTT"
+        ]
+      },
+      "realmRoles": [
+        "sinh_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "sv_huy",
+      "enabled": true,
+      "firstName": "sv_huy",
+      "lastName": "Lab",
+      "email": "sv_huy@lab.invalid",
+      "emailVerified": true,
+      "attributes": {
+        "khoa": [
+          "CNTT"
+        ]
+      },
+      "realmRoles": [
+        "sinh_vien"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Lab@2026!",
+          "temporary": false
+        }
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "k6-decision-api",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "doi-bi-mat-lab",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true
+    }
+  ]
+}
