@@ -1,0 +1,21 @@
+Ma_Yeu_Cau,Tieu_De,Tap_Tin_Cai_Dat,Tap_Tin_Kiem_Thu_Va_Bang_Chung
+FR-01,Phân quyền xem và sửa đề cương theo Khoa,policies/opa/policy.rego; policies/cedar/policies.cedar,runner/run_cases.py; evidence/ket_qua_kiem_thu.md (CT01..CT04)
+FR-02,Mặc định từ chối thao tác ngoài Khoa,policies/opa/policy.rego; policies/cedar/policies.cedar,evidence/ket_qua_kiem_thu.md (CT03..CT06)
+FR-03,Sinh viên chỉ xem khóa học đã ghi danh,policies/opa/policy.rego; policies/cedar/policies.cedar,evidence/ket_qua_kiem_thu.md (LM01)
+FR-04,Từ chối sinh viên chưa/hủy ghi danh và không sửa,policies/opa/policy.rego; policies/cedar/policies.cedar,evidence/ket_qua_kiem_thu.md (LM02..LM04)
+FR-05,Giảng viên chỉ xem và sửa khóa học phụ trách,policies/opa/policy.rego; policies/cedar/policies.cedar,evidence/ket_qua_kiem_thu.md (LM05..LM08)
+FR-06,Kiểm thử chéo 15 ca đồng nhất giữa 3 engine,runner/run_cases.py; data/cases.yaml,evidence/ket_qua_kiem_thu.md
+FR-07,Ghi nhật ký kiểm toán quyết định đầy đủ trường,api/audit_logger.py; api/main.py,evidence/audit.jsonl; evidence/FR-07/
+FR-08,Đo độ trễ p95 công bằng trên cùng tập ca lặp N lần,runner/benchmark.py,evidence/ket_qua_do_do_tre_p95.md
+NFR-01,Bảo mật thông tin cấu hình và tài khoản lab,policies/keycloak/realm-k6-lab.json; .gitignore,docs/thiet_ke.md
+NFR-02,Sử dụng tập dữ liệu và ca kiểm thử duy nhất,data/data.json; data/cases.yaml,data/cases.yaml
+NFR-03,Khả năng tái lập 100% trên máy sạch,docker-compose.yml; Dockerfile; README.md,evidence/nghiem_thu.md
+NFR-04,Thông báo lý do từ chối không làm rò rỉ dữ liệu,api/reason_helper.py,docs/thiet_ke.md
+IF-01,Giao diện API quyết định dùng chung (/authorize),api/main.py; api/models.py,docs/thiet_ke.md
+IF-02,Tích hợp Keycloak Authorization Services,api/engine_keycloak.py,policies/keycloak/realm-k6-lab.json
+IF-03,Tích hợp Open Policy Agent (OPA),api/engine_opa.py; policies/opa/policy.rego,docker-compose.yml
+IF-04,Tích hợp Cedar Engine (cedarpy nhúng),api/engine_cedar.py; policies/cedar/policies.cedar,Dockerfile
+DR-01,Mô hình dữ liệu người dùng và vai trò,data/data.json; data/cedar_entities.json,policies/keycloak/realm-k6-lab.json
+DR-02,Mô hình dữ liệu đề cương đào tạo theo Khoa,data/data.json; data/cedar_entities.json,policies/cedar/policies.cedar
+DR-03,Mô hình dữ liệu lớp học và ghi danh,data/data.json; data/cedar_entities.json,policies/opa/policy.rego
+DR-04,Mô hình bản ghi nhật ký kiểm toán quyết định,api/audit_logger.py,evidence/audit.jsonl
