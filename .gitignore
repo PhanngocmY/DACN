@@ -222,6 +222,8 @@ __marimo__/
 # generated at runtime
 logs/
 *.jsonl
+!evidence/FR-07/*.jsonl
+!evidence/audit.jsonl
 evidence/**/raw/
 
 # secrets and machine-specific config
